@@ -21,3 +21,17 @@ var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=flowers+inau
             console.log(response)
             // $(".TBD").text("Headline:" + response.docs)
         });
+       
+var apiKey = "&appid=5e7b224c91d9b5f0ca260c0e0222df35"
+var zipInput = "77095"
+var queryURLWeather = "https://api.openweathermap.org/data/2.5/forecast?zip="
+        
+$.ajax({
+    url: queryURLWeather + zipInput + apiKey,
+    method: "GET"
+})
+.then(function(response){
+    console.log(response);
+})
+
+
