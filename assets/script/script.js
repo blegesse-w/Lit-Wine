@@ -23,15 +23,16 @@ var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=flowers+inau
         });
        
 var apiKey = "&appid=5e7b224c91d9b5f0ca260c0e0222df35"
-var zipInput = "77095"
-var queryURLWeather = "https://api.openweathermap.org/data/2.5/forecast?zip="
-        
-$.ajax({
-    url: queryURLWeather + zipInput + apiKey,
+var cityInput = "Houston"
+var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q="
+  
+    $.ajax({
+    url: queryURLWeather + cityInput + apiKey,
     method: "GET"
-})
-.then(function(response){
+    })
+    .then(function(response){
     console.log(response);
-})
+    })
 
+  
 
