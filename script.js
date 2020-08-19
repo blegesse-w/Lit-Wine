@@ -29,7 +29,6 @@ function renderWeatherbyCityState() {
 
     var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
-
     $.ajax({
             url: queryURLWeather,
             method: "GET"
@@ -50,15 +49,8 @@ function renderWeatherbyCityState() {
                 method: "GET"
             }).then(function(response) {
                 console.log(response);
-
-
             })
-
-
         })
-
-
-
 }
 
 renderWeatherbyCityState();
