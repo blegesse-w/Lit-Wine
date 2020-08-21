@@ -37,7 +37,37 @@ var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q="
     console.log(response);
     })
 
-
+    function renderWeatherbyCityState() {
+      var apiKey = "631af5c78fdde025e0d500219377445c";
+      var city = "Austin, Texas"
+  
+      var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+  
+      $.ajax({
+              url: queryURLWeather,
+              method: "GET"
+          })
+          .then(function(response) {
+              console.log(response);
+  
+              var lat = response.coord.lat
+              console.log(lat)
+  
+              var lon = response.coord.lon
+              console.log(lon)
+  
+              var forecastURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+  
+              $.ajax({
+                  url: forecastURL,
+                  method: "GET"
+              }).then(function(response) {
+                  console.log(response);
+              })
+          })
+  }
+  
+  renderWeatherbyCityState();
 
 
 
