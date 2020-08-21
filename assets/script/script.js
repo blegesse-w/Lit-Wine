@@ -1,5 +1,5 @@
 // nyt book review api
-var listName = "Espionage" //input "hardcover-fiction" is for testing purposes. list is in google sheets doc. we'll need to make an array for the drop down menu.
+var listName = "hardcover-fiction" //input "hardcover-fiction" is for testing purposes. list is in google sheets doc. we'll need to make an array for the drop down menu.
 var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listName + ".json?api-key=E7hqgdVcY5GIbLAfpBFL6tvAVz8oV8WG";
         console.log(queryURLNYT)
       $.ajax({
@@ -11,8 +11,8 @@ var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listNa
         });
         
 // google books api test
-var searchTerm = ""
-var authorName = "Huxley"
+var searchTerm = "blood"
+var authorName = "McCarthy"
 var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorName + "&key=AIzaSyBTrX3sauMMmvjx2xDJpF8G58thA3OD4Qk";
                    // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
         console.log(queryURLGoogle)
