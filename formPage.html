@@ -1,71 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@600&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="assets/style/style.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Lit & Wine</title>
-    <!-- Compressed CSS -->
-
-</head>
-
-<body>
-
-
-    <h1> Lit & Wine </h1>
-<!--dropdown-->
-    <ul id="dropdown2" class="dropdown-content">
-        <li><a href="#!">one<span class="badge">1</span></a></li>
-        <li><a href="#!">two<span class="new badge">1</span></a></li>
-        <li><a href="#!">three</a></li>
-      </ul>
-      <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Dropdown<i class="material-icons right">arrow_drop_down</i></a>
-
-     <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal modal-fixed-footer">
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
-
-
-    <!-- <footer class="page-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Lit & Wine</h5>
-              <p class="grey-text text-lighten-4">A WebAPI project to help pair a good wine and book.</p>
-            </div>
+<!--question page:-->
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/style/uikit.min.css" />
+        
+        <script src="assets/script/uikit.min.js"></script>
+        <script src="assets/script/uikit-icons.min.js"></script>
+        <link rel="stylesheet" href="assets/style/style.css"/>
+    </head>
+    <body>
     
-          </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="container">
-          © 2020 Copyright Lit & Wine Group, Inc.
-          </div>
-        </div>
-      </footer> -->
+        
+        <div class="uk-inline">
+            <img src="assets/images/corks.jpg" alt="corks">
+            
+            <div class="uk-overlay-primary uk-position-cover"></div>
           
+            <div class="uk-overlay uk-position-top uk-light">
+<!--navbar-->
+
+              
+<div class="uk-position-realtive">
+ 
+  <div class="uk-position-top">
+      <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+          <div class="uk-navbar-center">
+              <ul class="uk-navbar-nav">
+                  <li class="uk-active"><a href="#"><h1>L i t & Wine</h1></a></li></ul></div></nav></div></div>
+
+<!--rest-->
+              <h1> Lit & Wine </h1>
+                <p uk-margin>
+                    <a class="uk-button uk-button-default" href="#modal-group-1" uk-toggle>Question 1</a>
+                    <a class="uk-button uk-button-default" href="#modal-group-2" uk-toggle>Question 2</a>
+                </p>
+
+             
+                
+                <div id="modal-group-1" uk-modal>
+                    <div class="uk-modal-dialog">
+                        <button class="uk-modal-close-default" type="button" uk-close></button>
+                        <div class="uk-modal-header">
+                            <h2 class="uk-modal-title">Enter your city below:</h2>
+                        </div>
+                        <div class="uk-modal-body">
+              
+                          <div class="uk-inline">
+                            <span class="uk-form-icon" uk-icon="icon: location"></span>
+                            <input class="uk-input">
+                            </div>
+              
+                          </div>
+                        <div class="uk-modal-footer uk-text-right">
+                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                            <a href="#modal-group-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <div id="modal-group-2" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <div class="uk-modal-header">
+                <h2 class="uk-modal-title">Pick choice of Author/Genre</h2>
+            </div>
+            <div class="uk-modal-body">
+    
+                      <ul class="uk-nav uk-dropdown-nav">
+                         <!--<li class="uk-active"><a href="#">Active</a></li>-->
+                          <li><a href="#">Stephen King/ Fantasy</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Agatha Christie/ Thriller-Mystery</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Sofi Oksanen/ Historical Fiction</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Cormac McCarthy/ Gothic Western</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Fyodor Dostoevsky/ Phylosophical Fiction</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Isabel Allende/ Magical Realism</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Herta Muller/ Political Fiction</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Aldous Huxley/ Dystopia</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">James Patterson/ Fantasy</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Camille Perri/ Rom-com</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Penn Jillette/ Non-fiction-essays</a></li>
+                          <li class="uk-nav-divider"></li>
+                          <li><a href="#">Cork open a surprise!</a></li>
+    
+                      </ul>
+                  </div>
+                  <div class="uk-modal-footer uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                    <a href="#modal-group-1" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+                </div>
+              </div>
+    
+              
+             
+            </div>
+         
+       
+    
+
+    
+   
+
     <!-- Compressed JavaScript -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="assets/script/script.js"></script>
