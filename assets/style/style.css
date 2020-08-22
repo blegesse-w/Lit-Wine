@@ -9,7 +9,45 @@ body {
     flex-direction: column;
   }
 
-  main {
+main {
     flex: 1 0 auto;
   }
 
+.title{
+    border: none;
+}
+
+button{
+    margin-bottom: 20%;
+    align-content: center;
+    margin-left: 35%;
+    padding: 14px 40px;
+}
+
+.startBtn {
+    background-color: transparent;
+    border: solid white 1px;
+    color: white;
+    height: 3rem;
+    width: 8rem;
+    margin: auto;
+    margin-left: 1rem;
+    margin-top: 4rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#btn{
+    color: white;
+    opacity: 80%;
+    border-radius: 25px;
+    border: solid 1px white;
+    /* margin-top: 70px; */
+}
+
+#title{
+    color: white;
+    opacity: 70%;
+    text-align: center;
+
+}
