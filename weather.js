@@ -1,7 +1,7 @@
 // function to render current weather:
 function renderWeatherbyCityState() {
     var apiKey = "631af5c78fdde025e0d500219377445c";
-    var city = "Austin, Texas"
+    var city = "San Antnio, Texas"
 
     var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 

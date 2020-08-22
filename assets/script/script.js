@@ -7,7 +7,8 @@ var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listNa
         method: "GET"
       })
         .then(function(response) {
-            console.log(response)
+            console.log(response);
+            console.log(response.items.0.saleInfo.buyLink);
         });
         
 // google books api test
@@ -73,23 +74,23 @@ var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q="
 
     
   // listener for dropdown menu in html
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.dropdown-trigger');
-      var instances = M.Dropdown.init(elems, options);
-    });
+  //  document.addEventListener('DOMContentLoaded', function() {
+  //    var elems = document.querySelectorAll('.dropdown-trigger');
+  //    var instances = M.Dropdown.init(elems, options);
+  //  });
   
     // Or with jQuery
   
-    $('.dropdown-trigger').dropdown();
+  //  $('.dropdown-trigger').dropdown();
 
   // listener for modal (button)
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems, options);
-    });
+  //  document.addEventListener('DOMContentLoaded', function() {
+  //    var elems = document.querySelectorAll('.modal');
+  //    var instances = M.Modal.init(elems, options);
+  //  });
   
     // Or with jQuery
   
-    $(document).ready(function(){
-      $('.modal').modal();
-    });
+  //  $(document).ready(function(){
+  //    $('.modal').modal();
+  //  });
