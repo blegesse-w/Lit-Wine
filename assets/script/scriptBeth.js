@@ -1,14 +1,11 @@
 function renderWeatherbyLocation() {
     $("#mainBtn").on("click", function() {
-        event.preventDefault();
-        console.log("click!")
 
-        // function to render current weather:
+        console.log("click!")
+            // function to render current weather:
         var apiKey = "631af5c78fdde025e0d500219377445c";
         var userLocation = $("#enterCity").val().trim();
         var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + userLocation + "&appid=" + apiKey;
-
-        console.log(userLocation)
 
         $.ajax({
                 url: queryURLWeather,
@@ -28,7 +25,7 @@ function renderWeatherbyLocation() {
 
                 //  setting the text
 
-                $(".current-weather").text("  " + " " + userLocation + " " + " " + Farenheit.toFixed(1) + " °F");
+                $(".current-weather").text("  " + " " + userLocation.toUpperCase() + " " + " " + Farenheit.toFixed(1) + " °F");
 
                 //  adding attributes: 
                 $(".icon").attr("src", " https://openweathermap.org/img/wn/" + iconID + ".png")

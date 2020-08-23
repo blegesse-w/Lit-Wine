@@ -7,35 +7,58 @@
     transform: translate(-50%, -50%);
     /*color: white;*/
 }
-.writing{
-    font-family: 'Special Elite', cursive;
+
+.uk-navbar-nav {
+    margin-right: 30px;
 }
-.uk-inline{
+
+.current-weather {
+    font-family: 'Special Elite', cursive;
+    opacity: 60%;
+    margin-left: 20px;
+}
+
+.icon {
+    padding: 0px;
+    margin-top: -20px;
+}
+
+.writing {
     font-family: 'Special Elite', cursive;
 }
 
-#title{
+.uk-inline {
     font-family: 'Special Elite', cursive;
 }
-#enterCity{
+
+#title {
+    font-family: 'Special Elite', cursive;
+}
+
+#enterCity {
     padding: 12px;
     font-size: 13px;
 }
+
+
 /* #wine-image{
     background-image: url('winestain.jpg');
     background-position: center;
 
 } */
 
-.uk-card-body{
+.uk-card-body {
     font-family: 'Special Elite', cursive;
 }
-.uk-card-title{
+
+.uk-card-title {
     font-family: 'Special Elite', cursive;
 }
-#home{
+
+#home {
     font-family: 'Special Elite', cursive;
 }
-#about{
+
+#about {
     font-family: 'Special Elite', cursive;
 }

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lit&Wine</title>
-    <link rel="stylesheet" href="assets/style/style.css">
+
     <link rel="stylesheet" href="assets/style/uikit.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="assets/style/style.css">
 </head>
 
 <body>
@@ -25,18 +25,18 @@
         </div>
     </nav>
 
-    <div style="align-content: center;">
+    <div class="image-background" style="align-content: center;">
         <div class="uk-background-cover uk-background-muted uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(assets/images/circle.jpg); height: 600px; width: 600px;">
             <div class="text">
 
                 <h1 id="title" style="font-size:50px">LIT&WINE</h1>
                 <div class="uk-inline">
                     <span class="uk-form-icon" uk-icon="icon: location"></span>
-                    <input placeholder="City , State" type="text" class="uk-input" id="enterCity">
+                    <input placeholder="Enter City , State" type="text" class="uk-input" id="enterCity">
                 </div>
                 <div class="uk-inline">
-
-                    <button class="uk-button uk-button-default" type="button" id="mainBtn">Next</button>
+                    <button class="uk-button uk-button-default" type="button" id="mainBtn">Author</button>
+                    <!--error message here-->
                     <div uk-dropdown="pos: right-center">
                         <ul class="uk-nav uk-dropdown-nav">
                             <li class="uk-nav-divider"></li>
