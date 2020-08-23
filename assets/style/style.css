@@ -1,53 +1,41 @@
-
-#logo {
-    color: black;
+.text {
+    font-family: 'Special Elite', cursive;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*color: white;*/
 }
-
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-main {
-    flex: 1 0 auto;
-  }
-
-.title{
-    border: none;
+.writing{
+    font-family: 'Special Elite', cursive;
 }
-
-button{
-    margin-bottom: 20%;
-    align-content: center;
-    margin-left: 35%;
-    padding: 14px 40px;
-}
-
-.startBtn {
-    background-color: transparent;
-    border: solid white 1px;
-    color: white;
-    height: 3rem;
-    width: 8rem;
-    margin: auto;
-    margin-left: 1rem;
-    margin-top: 4rem;
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-#btn{
-    color: white;
-    opacity: 80%;
-    border-radius: 25px;
-    border: solid 1px white;
-    /* margin-top: 70px; */
+.uk-inline{
+    font-family: 'Special Elite', cursive;
 }
 
 #title{
-    color: white;
-    opacity: 70%;
-    text-align: center;
+    font-family: 'Special Elite', cursive;
+}
+#enterCity{
+    padding: 12px;
+    font-size: 13px;
+}
+/* #wine-image{
+    background-image: url('winestain.jpg');
+    background-position: center;
 
+} */
+
+.uk-card-body{
+    font-family: 'Special Elite', cursive;
+}
+.uk-card-title{
+    font-family: 'Special Elite', cursive;
+}
+#home{
+    font-family: 'Special Elite', cursive;
+}
+#about{
+    font-family: 'Special Elite', cursive;
 }

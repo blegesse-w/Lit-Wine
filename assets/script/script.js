@@ -39,7 +39,7 @@ $(document).ready(function(){
       var search = $("#books").val();
       if(search == "")
       {
-        alert("Might want to enter something here since you need something to search for but I dunno... I just work here. ");
+        alert("Might want to enter something here since you need something git pull to search for but I dunno... I just work here. ");
       }
       else{		
         var url = "";
