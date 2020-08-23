@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,20 @@
     <link rel="stylesheet" href="assets/style/style.css">
     <link rel="stylesheet" href="assets/style/uikit.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <script src="assets/script/uikit.min.js"></script>
-    <script src="assets/script/uikit-icons.min.js"></script>
-    <script src="assets/script/scriptBeth.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-<body>
 
+</head>
+
+<body>
     <nav class="uk-navbar" uk-navbar>
+        <div class="uk-navbar-left">
+            <p class="current-weather"></p>
+            <img class="icon">
+        </div>
         <div class="uk-navbar-right">
-    
             <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="index.html" id="home">HOME</a></li>
-                <li ><a href="#" id="about">ABOUT</a></li>
+                <li class="uk-active"><a href="#" id="home">HOME</a></li>
+                <li><a href="#" id="about">ABOUT</a></li>
             </ul>
-    
         </div>
     </nav>
 
@@ -30,9 +30,13 @@
             <div class="text">
 
                 <h1 id="title" style="font-size:50px">LIT&WINE</h1>
-                <input placeholder="Enter your city" type="city" class="writing" id="enterCity">
                 <div class="uk-inline">
-                    <button class="uk-button uk-button-default" type="button">Author</button>
+                    <span class="uk-form-icon" uk-icon="icon: location"></span>
+                    <input placeholder="City , State" type="text" class="uk-input" id="enterCity">
+                </div>
+                <div class="uk-inline">
+
+                    <button class="uk-button uk-button-default" type="button" id="mainBtn">Next</button>
                     <div uk-dropdown="pos: right-center">
                         <ul class="uk-nav uk-dropdown-nav">
                             <li class="uk-nav-divider"></li>
@@ -56,8 +60,12 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/script/uikit.min.js"></script>
+    <script src="assets/script/uikit-icons.min.js"></script>
+    <script src="assets/script/scriptBeth.js"></script>
 
-    
 
 </body>
+
 </html>
