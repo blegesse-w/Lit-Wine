@@ -11,9 +11,9 @@ var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listNa
         });
         
 // google books api test
-var searchTerm = "blood"
+var searchTerm = ""
 var authorName = "McCarthy"
-var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorName + "&key=AIzaSyBTrX3sauMMmvjx2xDJpF8G58thA3OD4Qk";
+var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorName + "&printType=books&maxResults=4" +  "&key=AIzaSyBTrX3sauMMmvjx2xDJpF8G58thA3OD4Qk";
                    // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
         console.log(queryURLGoogle)
       $.ajax({
@@ -22,10 +22,51 @@ var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTe
       })
         .then(function(response) {
             console.log(response)
-            console.log(response.items[0].saleInfo.buyLink)
+            console.log(response.items[0].volumeInfo.title)
 
-            // $(".TBD").text("Headline:" + response.docs)
+           // for (i = 0; i < //MADDIE! not sure what to do!
+           var coverPage = (response.items[0].volumeInfo.imageLinks.thumbnail)
+           var author = (response.items[0].volumeInfo.authors[0])
+           var description = (response.items[0].volumeInfo.description)
+           var title = (response.items[0].volumeInfo.title)
+           var buyLink = (response.items[0].saleInfo.buyLink)
+
         });
+
+$(document).ready(function(){	
+    $("#myform").submit(function(){
+       
+      var search = $("#books").val();
+      if(search == "")
+      {
+        alert("Might want to enter something here since you need something to search for but I dunno... I just work here. ");
+      }
+      else{		
+        var url = "";
+        var img = "";
+        var title = "";
+        var author = "";
+       
+$.get(queryURLGoogle,function(response){
+       
+      for(i=0;i<response.items.length;i++)
+      {
+        title=$(response.items[i].volumeInfo.title);  
+        author=$(response.items[i].volumeInfo.authors);
+        img = $('<img id="dynamic"><br><a href=' + response.items[i].volumeInfo.infoLink + '><button id="imagebutton">Read More</button></a>'); 	
+        url= response.items[i].volumeInfo.imageLinks.thumbnail;
+        img.attr('src', url);
+        title.appendTo('#result');
+        author.appendTo('#result');
+        img.appendTo('#result');
+        }
+      });
+             
+      }
+      return false;
+    });
+       
+  });
        
 var apiKey = "&appid=5e7b224c91d9b5f0ca260c0e0222df35"
 var cityInput = "Houston"
