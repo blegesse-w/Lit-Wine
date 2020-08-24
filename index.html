@@ -12,60 +12,68 @@
 </head>
 
 <body>
+
     <nav class="uk-navbar" uk-navbar>
-        <div class="uk-navbar-left">
-            <p class="current-weather"></p>
-            <img class="icon">
-        </div>
+
         <div class="uk-navbar-right">
-            <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="#" id="home">HOME</a></li>
-                <li><a href="#" id="about">ABOUT</a></li>
-            </ul>
+            <div class="uk-navbar-left">
+                <p class="current-weather"></p>
+                <img class="icon">
+
+                <ul class="uk-navbar-nav">
+                    <li class="uk-active"><a href="index.html" id="home">HOME</a></li>
+                    <li><a href="#" id="about">ABOUT</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="image-background" style="align-content: center;">
+    <div style="align-content: center;">
         <div class="uk-background-cover uk-background-muted uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(assets/images/circle.jpg); height: 600px; width: 600px;">
             <div class="text">
-
                 <h1 id="title" style="font-size:50px">LIT&WINE</h1>
                 <div class="uk-inline">
                     <span class="uk-form-icon" uk-icon="icon: location"></span>
-                    <input placeholder="Enter City , State" type="text" class="uk-input" id="enterCity">
-                </div>
-                <div class="uk-inline">
-                    <button class="uk-button uk-button-default" type="button" id="mainBtn">Author</button>
-                    <!--error message here-->
-                    <div uk-dropdown="pos: right-center">
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li class="uk-nav-divider"></li>
-                            <li><a href="suggestion.html">Stephen King</a></li>
-                            <li><a href="suggestion.html">Fyodor Dostoevsky</a></li>
-                            <li><a href="suggestion.html">James Patterson</a></li>
-                            <li><a href="suggestion.html">Isabel Allende</a></li>
-                            <li><a href="suggestion.html">Camille Perri</a></li>
-                            <li><a href="suggestion.html">Sofi Oksanen</a></li>
-                            <li><a href="suggestion.html">Herta Müller</a></li>
-                            <li><a href="suggestion.html">Olga Tokarczuk</a></li>
-                            <li><a href="suggestion.html">Penn Jillette</a></li>
-                            <li><a href="suggestion.html">Cormac McCarthy</a></li>
-                            <li><a href="suggestion.html">Aldous Huxley</a></li>
-                            <li><a href="suggestion.html">Agatha Christie</a></li>
-                            <li><a href="suggestion.html">I'm feeling lucky</a></li>
-                            <li class="uk-nav-divider"></li>
-                        </ul>
+                    <input placeholder="City , State" type="city" class="writing" id="enterCity">
+                    <div class="uk-inline">
+                        <button class="uk-button uk-button-default" type="button" id="mainBtn">Author</button>
+                        <div uk-dropdown="pos: right-center">
+                            <ul class="uk-nav uk-dropdown-nav">
+                                <li class="uk-nav-divider"></li>
+                                <li><a class="author authorName" id="books" value="Stephen King">Stephen King</a></li>
+                                <li><a class="authorName " value="Fyodor Dostoevsky ">Fyodor Dostoevsky</a></li>
+                                <li><a class="authorName " value="James Patterson ">James Patterson</a></li>
+                                <li><a class="authorName " value="Isabel Allende ">Isabel Allende</a></li>
+                                <li><a class="authorName " value="Camille Perri ">Camille Perri</a></li>
+                                <li><a class="authorName " value="Sofi Oksanen ">Sofi Oksanen</a></li>
+                                <li><a class="authorName " value="Herta Müller ">Herta Müller</a></li>
+                                <li><a class="authorName " value="Olga Tokarczuk ">Olga Tokarczuk</a></li>
+                                <li><a class="authorName " value="Penn Jillette ">Penn Jillette</a></li>
+                                <li><a class="authorName " value="Cormac McCarthy ">Cormac McCarthy</a></li>
+                                <li><a class="authorName " value="Aldous Huxley ">Aldous Huxley</a></li>
+                                <li><a class="authorName " value="Agatha Christie ">Agatha Christie</a></li>
+                                <li><a class="authorName " value=" ">I'm feeling lucky</a></li>
+                                <li class="uk-nav-divider "></li>
+                            </ul>
+
+                        </div>
                     </div>
                 </div>
+                <p class="error-message"></p>
             </div>
         </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/script/uikit.min.js"></script>
-    <script src="assets/script/uikit-icons.min.js"></script>
-    <script src="assets/script/scriptBeth.js"></script>
+
+        <!-- Quick Fix -->
+
+        <div id="authorCards "></div>
 
 
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+        <script src="assets/script/uikit.min.js "></script>
+        <script src="assets/script/uikit-icons.min.js "></script>
+        <script src="assets/script/scriptBeth.js "></script>
 </body>
 
 </html>

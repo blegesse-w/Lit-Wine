@@ -16,11 +16,17 @@
     font-family: 'Special Elite', cursive;
     opacity: 60%;
     margin-left: 20px;
+    margin-top: 22px;
 }
 
 .icon {
     padding: 0px;
-    margin-top: -20px;
+    margin-top: -2px;
+}
+
+#enterCity {
+    width: 150px;
+    text-align: center;
 }
 
 .writing {
@@ -38,6 +44,12 @@
 #enterCity {
     padding: 12px;
     font-size: 13px;
+}
+
+.error-message {
+    font-family: 'Special Elite', cursive;
+    font-size: x-small;
+    text-align: left;
 }
 
 
