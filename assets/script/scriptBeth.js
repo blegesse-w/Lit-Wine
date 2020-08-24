@@ -15,12 +15,12 @@ function renderWinebyWeather() {
                 console.log(response);
 
 
-                var errorRespose =
-                    while (userLocation !== "dallas, texas") {
-                        console.log("you got it dude!")
-                            // $(".error-message").text("Error. City not found. Input correct format: City, State")
-                    }
-                console.log(userLocation)
+                // var errorRespose =
+                //     while (userLocation !== "dallas, texas") {
+                //         console.log("you got it dude!")
+                //             // $(".error-message").text("Error. City not found. Input correct format: City, State")
+                //     }
+                // console.log(userLocation)
 
                 // Temp from K to F
                 var Farenheit = (response.main.temp - 273.15) * 1.80 + 32;
