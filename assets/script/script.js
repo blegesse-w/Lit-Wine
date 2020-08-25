@@ -30,239 +30,125 @@ function renderWinebyWeather() {
                 $(".icon").attr("src", " https://openweathermap.org/img/wn/" + iconID + ".png")
 
                 $(document).on('click', '.author', function(event) {
-                        // event.preventDefault();
+                    // event.preventDefault();
 
-                        var authorClicked = $(this).text()
-                        console.log(authorClicked)
+                    var authorClicked = $(this).text()
+                    console.log(authorClicked)
 
-                        var temp = Farenheit
-                        console.log(temp)
-
-
+                    var temp = Farenheit
+                    console.log(temp)
 
 
-                        var catalogArray = [{
-                                Author: "Dan Brown",
-                                wineCold: " Rose",
-                                wineWarm: "Sauvignon Blanc",
-                                wineHot: "Pinot Noir",
-                            },
-                            {
-                                Author: "Fyodor Dostoevsky",
-                                wineCold: " Malbec",
-                                wineWarm: "Merlot",
-                                wineHot: "Pinot Noir",
-                            },
 
-                            {
-                                Author: "James Patterson",
-                                wineCold: " Cabarnet Suavignon",
-                                wineWarm: "Shiraz",
-                                wineHot: "Riesling",
-                            },
-                            {
-                                Author: "Gillian Flynn",
-                                wineCold: " Zinf Andel",
-                                wineWarm: "Viognier",
-                                wineHot: "Merlot/Pinot Gris",
-                            },
-                            {
-                                Author: "Isabel Allende",
-                                wineCold: " Torrentes",
-                                wineWarm: "Syrah",
-                                wineHot: "Garnacha",
-                            },
-                            {
-                                Author: "Camille Perri",
-                                wineCold: " Chenin Blanc",
-                                wineWarm: "Cabernet Sauvignon",
-                                wineHot: "Chardonnay/Rose",
-                            },
-                            {
-                                Author: "Sofi Oksanen",
-                                wineCold: " Chardonnay",
-                                wineWarm: "Chianti",
-                                wineHot: "Cabarnet Sauvignon",
-                            },
-                            {
-                                Author: "Herta Müller",
-                                wineCold: " Mulled Wine",
-                                wineWarm: "Suavignon Blanc",
-                                wineHot: "Malbec",
-                            },
-                            {
-                                Author: "Lee Child",
-                                wineCold: " Chenin Blanc",
-                                wineWarm: "Reisling",
-                                wineHot: "Prosecco",
-                            },
-                            {
-                                Author: "Cormac McCarthy",
-                                wineCold: " Malbec",
-                                wineWarm: "Chianti",
-                                wineHot: "Sauvignon Blanc",
-                            },
-                            {
-                                Author: "Aldous Huxley",
-                                wineCold: " Mulled Wine",
-                                wineWarm: "Pinot Noir",
-                                wineHot: "Pinot Grigio",
-                            },
-                            {
-                                Author: "Penn Jillette",
-                                wineCold: " Decaf Caffè Americano w/ 8 shots of Decaf Espresso",
-                                wineWarm: "Decaffinated Coffee",
-                                wineHot: "Sparkling Water",
-                            },
-                        ];
-                        for (var i = 0; i < catalogArray.length; i++) {
-                            var wineName = ""
-                                // console.log(catalogArray[i].Author)
-                                // console.log(catalogArray[i].wineCold)
-                                // console.log(catalogArray[i].wineHot)
-                                // console.log(catalogArray[i].wineWarm)
-                            if (authorClicked === catalogArray[i].Author && temp <= 60) {
-                                wineName = catalogArray[i].wineCold
-                                console.log(wineName)
-                            }
-                            if (authorClicked === catalogArray[i].Author && temp > 60 && temp < 80) {
-                                wineName = catalogArray[i].wineWarm
-                                console.log(wineName)
-                            }
-                            if (authorClicked === catalogArray[i].Author && temp >= 80) {
-                                wineName = catalogArray[i].wineHot
-                                console.log(wineName)
-                            }
 
-                            // var wineOne = document.querySelector('#wineOne')
+                    var catalogArray = [{
+                            Author: "Dan Brown",
+                            wineCold: " Rose",
+                            wineWarm: "Sauvignon Blanc",
+                            wineHot: "Pinot Noir",
+                        },
+                        {
+                            Author: "Fyodor Dostoevsky",
+                            wineCold: " Malbec",
+                            wineWarm: "Merlot",
+                            wineHot: "Pinot Noir",
+                        },
 
-                            // $('#wineOne').text("Wine: " + wineName)
+                        {
+                            Author: "James Patterson",
+                            wineCold: " Cabarnet Suavignon",
+                            wineWarm: "Shiraz",
+                            wineHot: "Riesling",
+                        },
+                        {
+                            Author: "Gillian Flynn",
+                            wineCold: " Zinf Andel",
+                            wineWarm: "Viognier",
+                            wineHot: "Merlot/Pinot Gris",
+                        },
+                        {
+                            Author: "Isabel Allende",
+                            wineCold: " Torrentes",
+                            wineWarm: "Syrah",
+                            wineHot: "Garnacha",
+                        },
+                        {
+                            Author: "Camille Perri",
+                            wineCold: " Chenin Blanc",
+                            wineWarm: "Cabernet Sauvignon",
+                            wineHot: "Chardonnay/Rose",
+                        },
+                        {
+                            Author: "Sofi Oksanen",
+                            wineCold: " Chardonnay",
+                            wineWarm: "Chianti",
+                            wineHot: "Cabarnet Sauvignon",
+                        },
+                        {
+                            Author: "Herta Müller",
+                            wineCold: " Mulled Wine",
+                            wineWarm: "Suavignon Blanc",
+                            wineHot: "Malbec",
+                        },
+                        {
+                            Author: "John Grisham",
+                            wineCold: " Chenin Blanc",
+                            wineWarm: "Reisling",
+                            wineHot: "Prosecco",
+                        },
+                        {
+                            Author: "Cormac McCarthy",
+                            wineCold: " Malbec",
+                            wineWarm: "Chianti",
+                            wineHot: "Sauvignon Blanc",
+                        },
+                        {
+                            Author: "Aldous Huxley",
+                            wineCold: " Mulled Wine",
+                            wineWarm: "Pinot Noir",
+                            wineHot: "Pinot Grigio",
+                        },
+                        {
+                            Author: "Penn Jillette",
+                            wineCold: " Decaf Caffè Americano w/ 8 shots of Decaf Espresso",
+                            wineWarm: "Decaffinated Coffee",
+                            wineHot: "Sparkling Water",
+                        },
+                    ];
+                    for (var i = 0; i < catalogArray.length; i++) {
+                        var wineName = ""
 
-                            // var wineTwo = document.querySelector('#wineTwo')
-                            // var wineThree = document.querySelector('#wineThree')
-                            // var wineFour = document.querySelector('#wineFour')
-                            $('#wineOne').append(wineName)
-                            $('#wineTwo').append(wineName)
-                            $('#wineThree').append(wineName)
-                            $('#wineFour').append(wineName)
-                                // wineOne.textContent("Wine: " + wineName)
-                                // wineTwo.append("Wine: " + wineName)
-                                // wineThree.append("Wine: " + wineName)
-                                // wineFour.append("Wine: " + wineName)
+                        if (authorClicked === catalogArray[i].Author && temp <= 60) {
+                            wineName = catalogArray[i].wineCold
+                            console.log(wineName)
+                        }
+                        if (authorClicked === catalogArray[i].Author && temp > 60 && temp < 80) {
+                            wineName = catalogArray[i].wineWarm
+                            console.log(wineName)
+                        }
+                        if (authorClicked === catalogArray[i].Author && temp >= 80) {
+                            wineName = catalogArray[i].wineHot
+                            console.log(wineName)
                         }
 
 
+                        $('#wineOne').append(wineName)
+                        $('#wineTwo').append(wineName)
+                        $('#wineThree').append(wineName)
+                        $('#wineFour').append(wineName)
 
-                    })
-                    .then(function(response) {
-                        console.log(response)
-                        console.log(response)
-
-
-
-                        var coverPage = (response.items[3].volumeInfo.imageLinks.thumbnail)
-                        console.log(coverPage)
-                        var author = (response.items[3].volumeInfo.authors[0])
-                        var description = (response.items[3].volumeInfo.description)
-                        var title = (response.items[3].volumeInfo.title)
-                        var buyLink = (response.items[3].saleInfo.buyLink)
+                    }
 
 
 
-
-                        var writerOne = document.querySelector('#writerOne')
-                        var topicOne = document.querySelector('#titleOne')
-                        var descripOne = document.querySelector('#descriptionOne')
-                        var linkOne = document.querySelector('#linkOne')
-
-                        writerOne.append("Author: " + author)
-                        topicOne.append("Title: " + title)
-                        descripOne.append("Description: " + description)
-                        $('#imgOne').attr('src', coverPage)
-
-
-                        $('#linkOne').attr('href', buyLink)
-
-
-
-                        /////////////////////////////////////////////////////////////////////
-
-                        var coverPage = (response.items[1].volumeInfo.imageLinks.thumbnail)
-                        var author = (response.items[1].volumeInfo.authors[0])
-                        var description = (response.items[1].volumeInfo.description)
-                        var title = (response.items[1].volumeInfo.title)
-                        var buyLink = (response.items[1].saleInfo.buyLink)
-
-
-
-
-                        var writerTwo = document.querySelector('#writerTwo')
-                        var topicTwo = document.querySelector('#titleTwo')
-                        var descripTwo = document.querySelector('#descriptionTwo')
-                        var linkTwo = document.querySelector('#linkTwo')
-
-                        writerTwo.append("Author: " + author)
-                        topicTwo.append("Title: " + title)
-                        descripTwo.append("Description: " + description)
-                        $('#imgTwo').attr('src', coverPage)
-                        $('#linkTwo').attr('href', buyLink)
-
-                        /////////////////////////////////////////////////////////////////////
-
-                        var coverPage = (response.items[2].volumeInfo.imageLinks.thumbnail)
-                        var author = (response.items[2].volumeInfo.authors[0])
-                        var description = (response.items[2].volumeInfo.description)
-                        var title = (response.items[2].volumeInfo.title)
-                        var buyLink = (response.items[2].saleInfo.buyLink)
-
-
-
-
-                        var writerThree = document.querySelector('#writerThree')
-                        var topicThree = document.querySelector('#titleThree')
-                        var descripThree = document.querySelector('#descriptionThree')
-                        var linkThree = document.querySelector('#linkThree')
-
-                        writerThree.append("Author: " + author)
-                        topicThree.append("Title: " + title)
-                        descripThree.append("Description: " + description)
-                        $('#imgThree').attr('src', coverPage)
-                        $('#linkThree').attr('href', buyLink)
-
-                        /////////////////////////////////////////////////////////////////////
-
-                        var coverPage = (response.items[0].volumeInfo.imageLinks.thumbnail)
-                        var author = (response.items[0].volumeInfo.authors[0])
-                        var description = (response.items[0].volumeInfo.description)
-                        var title = (response.items[0].volumeInfo.title)
-                        var buyLink = (response.items[0].saleInfo.buyLink)
-
-
-
-
-                        var writerFour = document.querySelector('#writerFour')
-                        var topicFour = document.querySelector('#titleFour')
-                        var descripFour = document.querySelector('#descriptionFour')
-                        var linkFour = document.querySelector('#linkFour')
-
-                        writerFour.append("Author: " + author)
-                        topicFour.append("Title: " + title)
-                        descripFour.append("Description: " + description)
-                        $('#imgFour').attr('src', coverPage)
-                        $('#linkFour').attr('href', buyLink)
-                    })
-
-
-
-
-
+                })
 
 
             })
     })
 }
 $(document).on('click', '.author', function(event) {
-    // event.preventDefault();
+
 
     var authorClicked = $(this).text()
     console.log(authorClicked)
@@ -278,16 +164,14 @@ $(document).on('click', '.author', function(event) {
 
     var searchTerm = ""
 
-    var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorClicked + "&printType=books&maxResults=4" + "&key=AIzaSyAY3w9MXUcw0hyZQHhfwGWZLP2O_iyJCgI";
-    // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
-    console.log(queryURLGoogle)
+    var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorClicked + "&printType=books&filter=ebooks&maxResults=4" + "&key=AIzaSyAY3w9MXUcw0hyZQHhfwGWZLP2O_iyJCgI";
     $.ajax({
             url: queryURLGoogle,
             method: "GET"
         })
         .then(function(response) {
             console.log(response)
-                // console.log(response.items[0].volumeInfo.title)
+
 
 
 
@@ -425,7 +309,6 @@ $(".luckyList").on("click", function() {
             <div class="uk-inline">
             <img src="${response.results.books[1].book_image}" alt="" class = "lucky-covers">
              </div>
-               
                 <div>
                     <div class="uk-card-body">
                         <h3 class="uk-card-title title">Title: ${response.results.books[1].title}</h3>
@@ -437,10 +320,10 @@ $(".luckyList").on("click", function() {
                 </div>
             </div>
             <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                <div class="uk-inline">
-                    <img src="${response.results.books[2].book_image}" alt="" class = "lucky-covers">
-                   
-                </div>
+            <div class="uk-inline">
+            <img src="${response.results.books[2].book_image}" alt="" class = "lucky-covers">
+           
+        </div>
                 <div>
                     <div class="uk-card-body">
                         <h3 class="uk-card-title title">Title: ${response.results.books[2].title}</h3>
@@ -452,10 +335,10 @@ $(".luckyList").on("click", function() {
                 </div>
             </div>
             <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                <div class="uk-inline">
-                    <img src="${response.results.books[3].book_image}" alt="" class = "lucky-covers">
-             
-                </div>
+            <div class="uk-inline">
+            <img src="${response.results.books[3].book_image}" alt="" class = "lucky-covers">
+     
+        </div>
                 <div>
                     <div class="uk-card-body">
                         <h3 class="uk-card-title title">Title: ${response.results.books[3].title}</h3>
@@ -485,35 +368,21 @@ $("#home").on("click", function() {
 
     location.reload(true);
 
-    // var titleOne = document.getElementById("titleOne")
-    // var writerOne = document.getElementById('writerOne')
-    // var wineOne = document.getElementById('wineOne')
 
-    // console.clear()
-    // titleOne.textContent = ""
-    // writerOne.textContent = ""
-    // descriptionOne.textContent = ""
-    // wineOne.textContent = ""
 
-    // titleTwo.textContent = ""
-    // writerTwo.textContent = ""
-    // descriptionTwo.textContent = ""
-    // wineTwo.textContent = ""
+})
+$("#about").on("click", function() {
 
-    // titleThree.textContent = ""
-    // writerThree.textContent = ""
-    // descriptionThree.textContent = ""
-    // wineThree.textContent = ""
 
-    // titleFour.textContent = ""
-    // writerFour.textContent = ""
-    // descriptionFour.textContent = ""
-    // wineFour.textContent = ""
+    var index = document.getElementById('starterPage')
+    var suggestion = document.getElementById('suggestionPage')
+    var about = document.getElementById('aboutText')
 
-    // $('#mainBtn').clear()
 
-    authorCard.textContent = ""
 
+    index.style.display = "none"
+    suggestion.style.display = "none"
+    about.style.display = "block"
 })
 
 renderWinebyWeather();
