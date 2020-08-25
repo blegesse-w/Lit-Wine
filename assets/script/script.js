@@ -201,7 +201,7 @@ function renderWinebyWeather() {
                     writerOne.append("Author: " + author)
                     topicOne.append("Title: " + title)
                     descripOne.append("Description: " + description)
-                    $('.imgOne').attr('src', coverPage)
+                    $('#imgOne').attr('src', coverPage)
 
 
                     $('#linkOne').attr('href', buyLink)
@@ -305,9 +305,8 @@ function renderWinebyWeather() {
                     console.log(response);
                     // console.log(response.items.0.saleInfo.buyLink);
                     var authorCard = `<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                <div class="uk-card-media-left uk-cover-container">
-                    <img src="${response.results.books[0].book_image}" alt="" uk-cover>
-                    <canvas width="600" height="400"></canvas>
+                <div class="uk-inline">
+                    <img src="${response.results.books[0].book_image}" alt="" class = "lucky-covers">
                 </div>
                 <div>
                     <div class="uk-card-body">
@@ -320,10 +319,10 @@ function renderWinebyWeather() {
                 </div>
             </div>
             <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                <div class="uk-card-media-left uk-cover-container">
-                    <img src="${response.results.books[1].book_image}" alt="" uk-cover>
-                    <canvas width="600" height="400"></canvas>
-                </div>
+            <div class="uk-inline">
+            <img src="${response.results.books[1].book_image}" alt="" class = "lucky-covers">
+             </div>
+               
                 <div>
                     <div class="uk-card-body">
                         <h3 class="uk-card-title title">Title: ${response.results.books[1].title}</h3>
@@ -335,9 +334,9 @@ function renderWinebyWeather() {
                 </div>
             </div>
             <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                <div class="uk-card-media-left uk-cover-container">
-                    <img src="${response.results.books[2].book_image}" alt="" uk-cover>
-                    <canvas width="600" height="400"></canvas>
+                <div class="uk-inline">
+                    <img src="${response.results.books[2].book_image}" alt="" class = "lucky-covers">
+                   
                 </div>
                 <div>
                     <div class="uk-card-body">
@@ -350,9 +349,9 @@ function renderWinebyWeather() {
                 </div>
             </div>
             <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                <div class="uk-card-media-left uk-cover-container">
-                    <img src="${response.results.books[3].book_image}" alt="" uk-cover>
-                    <canvas width="600" height="400"></canvas>
+                <div class="uk-inline">
+                    <img src="${response.results.books[3].book_image}" alt="" class = "lucky-covers">
+             
                 </div>
                 <div>
                     <div class="uk-card-body">

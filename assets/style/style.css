@@ -79,7 +79,27 @@
         display: none;
     }
     
-    .imgOne {
-        height: 300px;
-        width: 200px;
+    #imgOne {
+        height: 600px;
+        width: 350px;
+    }
+    
+    #imgTwo {
+        height: 600px;
+        width: 350px;
+    }
+    
+    #imgThree {
+        height: 600px;
+        width: 350px;
+    }
+    
+    #imgFour {
+        height: 600px;
+        width: 350px;
+    }
+    
+    .lucky-covers {
+        height: 600px;
+        width: 350px;
     }
