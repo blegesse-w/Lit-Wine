@@ -99,3 +99,19 @@
     height: 600px;
     width: 350px;
 }
+
+#creative {
+    font-family: 'Special Elite', cursive;
+    padding: 5px;
+    margin-top: 110px;
+    margin-left: -10px;
+    font-weight: 10px;
+}
+
+#aboutText {
+    display: none;
+}
+
+#enterCity:focus {
+    outline: 2px solid rgb(99, 13, 39);
+}
