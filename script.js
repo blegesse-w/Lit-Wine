@@ -61,7 +61,7 @@ function renderWinebyWeather() {
                             wineHot: "Riesling",
                         },
                         {
-                            Author: "Agatha Christie",
+                            Author: "Gillian Flynn",
                             wineCold: " Zinf Andel",
                             wineWarm: "Viognier",
                             wineHot: "Merlot/Pinot Gris",
@@ -73,7 +73,7 @@ function renderWinebyWeather() {
                             wineHot: "Garnacha",
                         },
                         {
-                            Author: "Camille Perri'",
+                            Author: "Camille Perri",
                             wineCold: " Chenin Blanc",
                             wineWarm: "Cabernet Sauvignon",
                             wineHot: "Chardonnay/Rose",
@@ -85,13 +85,13 @@ function renderWinebyWeather() {
                             wineHot: "Cabarnet Sauvignon",
                         },
                         {
-                            Author: "Herta Muller",
+                            Author: "Herta Müller",
                             wineCold: " Mulled Wine",
                             wineWarm: "Suavignon Blanc",
                             wineHot: "Malbec",
                         },
                         {
-                            Author: "Olga Tokarczuk",
+                            Author: "John Grisham",
                             wineCold: " Chenin Blanc",
                             wineWarm: "Reisling",
                             wineHot: "Prosecco",
@@ -117,10 +117,7 @@ function renderWinebyWeather() {
                     ];
                     for (var i = 0; i < catalogArray.length; i++) {
                         var wineName = ""
-                            // console.log(catalogArray[i].Author)
-                            // console.log(catalogArray[i].wineCold)
-                            // console.log(catalogArray[i].wineHot)
-                            // console.log(catalogArray[i].wineWarm)
+                          
                         if (authorClicked === catalogArray[i].Author && temp <= 60) {
                             wineName = catalogArray[i].wineCold
                             console.log(wineName)
@@ -134,21 +131,12 @@ function renderWinebyWeather() {
                             console.log(wineName)
                         }
     
-                        // var wineOne = document.querySelector('#wineOne')
-                         
-                        // $('#wineOne').text("Wine: " + wineName)
-                        
-                        // var wineTwo = document.querySelector('#wineTwo')
-                        // var wineThree = document.querySelector('#wineThree')
-                        // var wineFour = document.querySelector('#wineFour')
+                    
                         $('#wineOne').append(wineName)
                         $('#wineTwo').append(wineName)
                         $('#wineThree').append(wineName)
                         $('#wineFour').append(wineName)
-                        // wineOne.textContent("Wine: " + wineName)
-                        // wineTwo.append("Wine: " + wineName)
-                        // wineThree.append("Wine: " + wineName)
-                        // wineFour.append("Wine: " + wineName)
+                    
                     }
                        
 
@@ -160,7 +148,7 @@ function renderWinebyWeather() {
         })
 }   
 $(document).on('click', '.author', function(event){
-    // event.preventDefault();
+    
 
     var authorClicked = $(this).text()
     console.log(authorClicked)
@@ -176,8 +164,7 @@ $(document).on('click', '.author', function(event){
     
     var searchTerm = ""
     
-    var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorClicked + "&printType=books&maxResults=4" +  "&key=AIzaSyAY3w9MXUcw0hyZQHhfwGWZLP2O_iyJCgI";
-                   // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
+    var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorClicked + "&printType=books&filter=ebooks&maxResults=4" +  "&key=AIzaSyAY3w9MXUcw0hyZQHhfwGWZLP2O_iyJCgI"                   // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
         console.log(queryURLGoogle)
     $.ajax({
         url: queryURLGoogle,
@@ -185,7 +172,7 @@ $(document).on('click', '.author', function(event){
     })
         .then(function(response) {
             console.log(response)
-            // console.log(response.items[0].volumeInfo.title)
+            
 
             
 
@@ -280,7 +267,7 @@ $(document).on('click', '.author', function(event){
 
            
 
-      
+        
 
         
      
@@ -315,7 +302,7 @@ $(".luckyList").on("click", function(){
                         <h3 class="uk-card-title title">Title: ${response.results.books[0].title}</h3>
                         <p class="author">Author: ${response.results.books[0].author}</p>
                         <p class="description">Description: ${response.results.books[0].description}</p>
-                        <p>Wine:</p>
+                       
                         <a class="uk-button uk-button-default" href="${response.results.books[0].amazon_product_url}">Book Link</a>
                     </div>
                 </div>
@@ -330,7 +317,7 @@ $(".luckyList").on("click", function(){
                         <h3 class="uk-card-title title">Title: ${response.results.books[1].title}</h3>
                         <p class="author">Author: ${response.results.books[1].author}</p>
                         <p class="description">Description: ${response.results.books[1].description}</p>
-                        <p>Wine:</p>
+                       
                         <a class="uk-button uk-button-default" href="${response.results.books[1].amazon_product_url}">Book Link</a>
                     </div>
                 </div>
@@ -345,7 +332,7 @@ $(".luckyList").on("click", function(){
                         <h3 class="uk-card-title title">Title: ${response.results.books[2].title}</h3>
                         <p class="author">Author: ${response.results.books[2].author}</p>
                         <p class="description">Description: ${response.results.books[2].description}</p>
-                        <p>Wine:</p>
+                        
                         <a class="uk-button uk-button-default" href="${response.results.books[2].amazon_product_url}">Book Link</a>
                     </div>
                 </div>
@@ -360,7 +347,7 @@ $(".luckyList").on("click", function(){
                         <h3 class="uk-card-title title">Title: ${response.results.books[3].title}</h3>
                         <p class="author">Author: ${response.results.books[3].author}</p>
                         <p class="description">Description: ${response.results.books[3].description}</p>
-                        <p>Wine:</p>
+                        
                         <a class="uk-button uk-button-default" href="${response.results.books[3].amazon_product_url}">Book Link</a>
                     </div>
                 </div>
@@ -382,10 +369,23 @@ $("#home").on("click", function(){
     index.style.display = "block"
     suggestion.style.display = "none"
 
-    var titleOne = document.getElementById("titleOne")
-    
-    titleOne.reset()
+    location.reload(true);
 
+
+    
+})
+$("#about").on("click", function(){
+    
+    
+    var index = document.getElementById('starterPage')
+    var suggestion = document.getElementById('suggestionPage')
+    var about = document.getElementById('aboutText')
+
+    
+    
+    index.style.display = "none"
+    suggestion.style.display = "none"
+    about.style.display = "block"
 })
 
 renderWinebyWeather();
