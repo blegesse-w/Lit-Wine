@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="wineFaviIcon.png">
     <title>Lit&Wine</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="uikit.min.css">
@@ -20,36 +21,37 @@
     
             <ul class="uk-navbar-nav">
                 <li class="uk-active"><a  id="home" type="reset">HOME</a></li>
-                <li ><a href="#" id="about">ABOUT</a></li>
+                <li class="uk-active"><a  id="about">ABOUT</a></li>
             </ul>
     
         </div>
     </nav>
 
-    <div style="align-content: center;" id="starterPage">
-        <div class="uk-background-cover uk-background-muted uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(circle.jpg); height: 600px; width: 600px;">
+    <div style="align-content: center;" id="starterPage" class="uk-container">
+        <div class="uk-background-cover uk-background-muted uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(circle.jpg); height: 600px; width: 600px; margin: 5px 300px">
             <div class="text">
 
                 <h1 id="title" style="font-size:50px">LIT&WINE</h1>
                 <div class="uk-inline">
                     <span class="uk-form-icon" uk-icon="icon: location"></span>
                     <input placeholder="City , State" type="city" class="writing" id="enterCity">
+                    
                     <button class="uk-button uk-button-default" type="button" id="mainBtn">Author</button>
                     <div uk-dropdown="pos: right-center ">
                         <ul class="uk-nav uk-dropdown-nav">
                             <li class="uk-nav-divider"></li>
-                            <li><a class="author" >Dan Brown</a></li>
+                            <li><a class="author">Dan Brown</a></li>
                             <li><a class="author">Fyodor Dostoevsky</a></li>
                             <li><a class="author">James Patterson</a></li>
                             <li><a class="author">Isabel Allende</a></li>
                             <li><a class="author">Camille Perri</a></li>
                             <li><a class="author">Sofi Oksanen</a></li>
                             <li><a class="author">Herta Müller</a></li>
-                            <li><a class="author">Olga Tokarczuk</a></li>
+                            <li><a class="author">John Grisham</a></li>
                             <li><a class="author">Penn Jillette</a></li>
                             <li><a class="author">Cormac McCarthy</a></li>
                             <li><a class="author">Aldous Huxley</a></li>
-                            <li><a class="author">Agatha Christie</a></li>
+                            <li><a class="author">Gillian Flynn</a></li>
                             <li><a class="luckyList">I'm feeling lucky</a></li>
                             <li class="uk-nav-divider"></li>
                         </ul>
@@ -127,7 +129,19 @@
         </div>
     </div>
     <div id="authorCards"></div>
-    
+    <div id="aboutText">
+        <div style="align-content: center;" id="starterPage" class="uk-container">
+            <div class="uk-background-cover uk-background-muted uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(circle.jpg); height: 600px; width: 600px; margin: 5px 300px">
+                <div class="text">
+                    <p id="creative">Thoughts molt from brain to page to form books. 
+                        Books are a harbor for creativity - a byproduct of ideas that have outgrown the heads they were born in. 
+                        Wine either nourishes these thoughts or shrinks the head... regardless, 
+                        it’s an integral part of the writing process, and we believe it to be a necessary part of reading as well. Cheers!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>       
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="uikit.min.js"></script>
     <script src="uikit-icons.min.js"></script>
