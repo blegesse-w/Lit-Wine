@@ -147,159 +147,159 @@ function renderWinebyWeather() {
 
 
 
-    })
-
-
-
-
-    // // GETTING BOOK INFO BASED USER'S CHOICE OF AUTHOR AND ADDING IT TO HTML
-    $(document).on('click', '.author', function(event) {
-        // event.preventDefault();
-
-        var authorClicked = $(this).text()
-        console.log(authorClicked)
-
-        var index = document.getElementById('starterPage')
-        var suggestion = document.getElementById('suggestionPage')
-
-        index.style.display = "none"
-        suggestion.style.display = "block"
-
-
-
-
-        var searchTerm = ""
-
-        var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorClicked + "&printType=books&maxResults=4" + "&key=AIzaSyAY3w9MXUcw0hyZQHhfwGWZLP2O_iyJCgI";
-        // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
-        console.log(queryURLGoogle)
-        $.ajax({
-                url: queryURLGoogle,
-                method: "GET"
-            })
-            .then(function(response) {
-                console.log(response)
-                    // console.log(response.items[0].volumeInfo.title)
-
-
-
-                var coverPage = (response.items[3].volumeInfo.imageLinks.thumbnail)
-                var author = (response.items[3].volumeInfo.authors[0])
-                var description = (response.items[3].volumeInfo.description)
-                var title = (response.items[3].volumeInfo.title)
-                var buyLink = (response.items[3].saleInfo.buyLink)
-
-
-
-
-                var writerOne = document.querySelector('#writerOne')
-                var topicOne = document.querySelector('#titleOne')
-                var descripOne = document.querySelector('#descriptionOne')
-                var linkOne = document.querySelector('#linkOne')
-
-                writerOne.append("Author: " + author)
-                topicOne.append("Title: " + title)
-                descripOne.append("Description: " + description)
-                $('#imgOne').attr('src', coverPage)
-                $('#linkOne').attr('href', buyLink)
-
-                /////////////////////////////////////////////////////////////////////
-
-                var coverPage = (response.items[1].volumeInfo.imageLinks.thumbnail)
-                var author = (response.items[1].volumeInfo.authors[0])
-                var description = (response.items[1].volumeInfo.description)
-                var title = (response.items[1].volumeInfo.title)
-                var buyLink = (response.items[1].saleInfo.buyLink)
-
-
-
-
-                var writerTwo = document.querySelector('#writerTwo')
-                var topicTwo = document.querySelector('#titleTwo')
-                var descripTwo = document.querySelector('#descriptionTwo')
-                var linkTwo = document.querySelector('#linkTwo')
-
-                writerTwo.append("Author: " + author)
-                topicTwo.append("Title: " + title)
-                descripTwo.append("Description: " + description)
-                $('#imgTwo').attr('src', coverPage)
-                $('#linkTwo').attr('href', buyLink)
-
-                /////////////////////////////////////////////////////////////////////
-
-                var coverPage = (response.items[2].volumeInfo.imageLinks.thumbnail)
-                var author = (response.items[2].volumeInfo.authors[0])
-                var description = (response.items[2].volumeInfo.description)
-                var title = (response.items[2].volumeInfo.title)
-                var buyLink = (response.items[2].saleInfo.buyLink)
-
-
-
-
-                var writerThree = document.querySelector('#writerThree')
-                var topicThree = document.querySelector('#titleThree')
-                var descripThree = document.querySelector('#descriptionThree')
-                var linkThree = document.querySelector('#linkThree')
-
-                writerThree.append("Author: " + author)
-                topicThree.append("Title: " + title)
-                descripThree.append("Description: " + description)
-                $('#imgThree').attr('src', coverPage)
-                $('#linkThree').attr('href', buyLink)
-
-                /////////////////////////////////////////////////////////////////////
-
-                var coverPage = (response.items[0].volumeInfo.imageLinks.thumbnail)
-                var author = (response.items[0].volumeInfo.authors[0])
-                var description = (response.items[0].volumeInfo.description)
-                var title = (response.items[0].volumeInfo.title)
-                var buyLink = (response.items[0].saleInfo.buyLink)
-
-
-
-
-                var writerFour = document.querySelector('#writerFour')
-                var topicFour = document.querySelector('#titleFour')
-                var descripFour = document.querySelector('#descriptionFour')
-                var linkFour = document.querySelector('#linkFour')
-
-                writerFour.append("Author: " + author)
-                topicFour.append("Title: " + title)
-                descripFour.append("Description: " + description)
-                $('#imgFour').attr('src', coverPage)
-                $('#linkFour').attr('href', buyLink)
-            })
 
 
 
 
 
+        // // GETTING BOOK INFO BASED USER'S CHOICE OF AUTHOR AND ADDING IT TO HTML
+        $(document).on('click', '.author', function(event) {
+            // event.preventDefault();
+
+            var authorClicked = $(this).text()
+            console.log(authorClicked)
+
+            var index = document.getElementById('starterPage')
+            var suggestion = document.getElementById('suggestionPage')
+
+            index.style.display = "none"
+            suggestion.style.display = "block"
+
+
+
+
+            var searchTerm = ""
+
+            var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorClicked + "&printType=books&maxResults=4" + "&key=AIzaSyAY3w9MXUcw0hyZQHhfwGWZLP2O_iyJCgI";
+            // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
+            console.log(queryURLGoogle)
+            $.ajax({
+                    url: queryURLGoogle,
+                    method: "GET"
+                })
+                .then(function(response) {
+                    console.log(response)
+                        // console.log(response.items[0].volumeInfo.title)
+
+
+
+                    var coverPage = (response.items[3].volumeInfo.imageLinks.thumbnail)
+                    var author = (response.items[3].volumeInfo.authors[0])
+                    var description = (response.items[3].volumeInfo.description)
+                    var title = (response.items[3].volumeInfo.title)
+                    var buyLink = (response.items[3].saleInfo.buyLink)
+
+
+
+
+                    var writerOne = document.querySelector('#writerOne')
+                    var topicOne = document.querySelector('#titleOne')
+                    var descripOne = document.querySelector('#descriptionOne')
+                    var linkOne = document.querySelector('#linkOne')
+
+                    writerOne.append("Author: " + author)
+                    topicOne.append("Title: " + title)
+                    descripOne.append("Description: " + description)
+                    $('#imgOne').attr('src', coverPage)
+                    $('#linkOne').attr('href', buyLink)
+
+                    /////////////////////////////////////////////////////////////////////
+
+                    var coverPage = (response.items[1].volumeInfo.imageLinks.thumbnail)
+                    var author = (response.items[1].volumeInfo.authors[0])
+                    var description = (response.items[1].volumeInfo.description)
+                    var title = (response.items[1].volumeInfo.title)
+                    var buyLink = (response.items[1].saleInfo.buyLink)
+
+
+
+
+                    var writerTwo = document.querySelector('#writerTwo')
+                    var topicTwo = document.querySelector('#titleTwo')
+                    var descripTwo = document.querySelector('#descriptionTwo')
+                    var linkTwo = document.querySelector('#linkTwo')
+
+                    writerTwo.append("Author: " + author)
+                    topicTwo.append("Title: " + title)
+                    descripTwo.append("Description: " + description)
+                    $('#imgTwo').attr('src', coverPage)
+                    $('#linkTwo').attr('href', buyLink)
+
+                    /////////////////////////////////////////////////////////////////////
+
+                    var coverPage = (response.items[2].volumeInfo.imageLinks.thumbnail)
+                    var author = (response.items[2].volumeInfo.authors[0])
+                    var description = (response.items[2].volumeInfo.description)
+                    var title = (response.items[2].volumeInfo.title)
+                    var buyLink = (response.items[2].saleInfo.buyLink)
+
+
+
+
+                    var writerThree = document.querySelector('#writerThree')
+                    var topicThree = document.querySelector('#titleThree')
+                    var descripThree = document.querySelector('#descriptionThree')
+                    var linkThree = document.querySelector('#linkThree')
+
+                    writerThree.append("Author: " + author)
+                    topicThree.append("Title: " + title)
+                    descripThree.append("Description: " + description)
+                    $('#imgThree').attr('src', coverPage)
+                    $('#linkThree').attr('href', buyLink)
+
+                    /////////////////////////////////////////////////////////////////////
+
+                    var coverPage = (response.items[0].volumeInfo.imageLinks.thumbnail)
+                    var author = (response.items[0].volumeInfo.authors[0])
+                    var description = (response.items[0].volumeInfo.description)
+                    var title = (response.items[0].volumeInfo.title)
+                    var buyLink = (response.items[0].saleInfo.buyLink)
+
+
+
+
+                    var writerFour = document.querySelector('#writerFour')
+                    var topicFour = document.querySelector('#titleFour')
+                    var descripFour = document.querySelector('#descriptionFour')
+                    var linkFour = document.querySelector('#linkFour')
+
+                    writerFour.append("Author: " + author)
+                    topicFour.append("Title: " + title)
+                    descripFour.append("Description: " + description)
+                    $('#imgFour').attr('src', coverPage)
+                    $('#linkFour').attr('href', buyLink)
+                })
 
 
 
 
 
-    })
 
-    $(".luckyList").on("click", function() {
 
-        var index = document.getElementById('starterPage')
-        var suggestion = document.getElementById('suggestionPage')
 
-        index.style.display = "none"
-            // suggestion.style.display = "block"
 
-        var listName = "combined print fiction" // best seller books in this section
-        var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listName + ".json?api-key=E7hqgdVcY5GIbLAfpBFL6tvAVz8oV8WG";
-        console.log(queryURLNYT)
-        $.ajax({
-                url: queryURLNYT,
-                method: "GET"
-            })
-            .then(function(response) {
-                console.log(response);
-                // console.log(response.items.0.saleInfo.buyLink);
-                var authorCard = `<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+
+        })
+
+        $(".luckyList").on("click", function() {
+
+            var index = document.getElementById('starterPage')
+            var suggestion = document.getElementById('suggestionPage')
+
+            index.style.display = "none"
+                // suggestion.style.display = "block"
+
+            var listName = "combined print fiction" // best seller books in this section
+            var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listName + ".json?api-key=E7hqgdVcY5GIbLAfpBFL6tvAVz8oV8WG";
+            console.log(queryURLNYT)
+            $.ajax({
+                    url: queryURLNYT,
+                    method: "GET"
+                })
+                .then(function(response) {
+                    console.log(response);
+                    // console.log(response.items.0.saleInfo.buyLink);
+                    var authorCard = `<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
                 <div class="uk-card-media-left uk-cover-container">
                     <img src="${response.results.books[0].book_image}" alt="" uk-cover>
                     <canvas width="600" height="400"></canvas>
@@ -360,10 +360,12 @@ function renderWinebyWeather() {
                 </div>
             </div>`
 
-                $("#authorCards").html(authorCard);
-            });
+                    $("#authorCards").html(authorCard);
+                });
+        })
+
+
     })
 
 }
-
 renderWinebyWeather();
