@@ -1,231 +1,196 @@
-// function wineSelection() {
+// CALLING THE WEATHER TO GENERATE WINE TYPE BASED ON USER'S CHOICE OF AUTHOR
+console.log("working")
 
-//     var temp = 60
-//     var authorClicked = 'James Patterson'
-//     var wineName = ""
+function renderWinebyWeather() {
+    $("#mainBtn").mouseover(function() {
 
-//     var catalog = [
-//         ['Stephen King', 'Rose', 'Sauvignon Blanc', 'Pinot Noir'], 
-//         ['Fyodor Dostoevsky', 'Malbec', 'Merlot', 'Pinot Noir'], 
-//         ['James Patterson', 'Cabernet Sauvignon', 'Shiraz', 'Riesling'],
-//         ['Agatha Christie', 'Zinf Andel', 'Viognier', 'Merlot/Pinot Gris'],
-//         ['Isabel Allende', 'Torrentes', 'Syrah', 'Garnacha'],
-//         ['Camille Perri', 'Chenin Blanc', 'Cabernet Sauvignon', 'Chardonnay/Rose'],
-//         ['Sofi Oksanen', 'Chardonnay', 'Chianti', 'Cabarnet Sauvignon'],
-//         ['Herta Muller', 'Mulled Wine', 'Suavignon Blanc', 'Malbec'],
-//         ['Olga Tokarczuk', 'Chenin Blanc', 'Reisling', 'Prosecco'],
-//         ['Cormac McCarthy', 'Malbec', 'Chianti', 'Sauvignon Blanc'],
-//         ['Aldous Huxley', 'Mulled Wine', 'Pinot Noir', 'Pinot Grigio'],
-//         ['Penn Jillette', 'Decaf Caffè Americano w/ 8 shots of Decaf Espresso', 'Decaffinated Coffee', 'Sparkling Water']]
+        var apiKey = "631af5c78fdde025e0d500219377445c";
 
-            
+        var userLocation = $("#enterCity").val().trim();
 
-//     for (i = 0; i < exampleList.length; i++) {
-//         if ((authorClicked === catalog[i][0]) && (temp <= 60)) {
-//             wineName = catalog[i][1]
-//         }
-//         if ((authorClicked === catalog[i][0]) && (temp > 60 && temp < 80)){
-//             wineName = catalog[i][2]
-//         }
-//         if ((authorClicked === catalog[i][0]) && (temp >= 80)) {
-//             wineName = catalog[i][3]
-//         }
-//     }
+        var queryURLWeather = "https://api.openweathermap.org/data/2.5/weather?q=" + userLocation + "&appid=" + apiKey;
+        // function to render current weather:
+        $.ajax({
+                url: queryURLWeather,
+                method: "GET"
+            })
+            .then(function(response) {
+                console.log(response);
+                // Temp from K to F
+                var Farenheit = (response.main.temp - 273.15) * 1.80 + 32;
+                console.log(Farenheit.toFixed(2))
 
-//     return wineName
-    
-// }
+                //getting the icon
+                iconID = response.weather[0].icon
 
-// function feelingLucky(){
-//     var listName = "combined print fiction" // best seller books in this section 
-//     var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listName + ".json?api-key=E7hqgdVcY5GIbLAfpBFL6tvAVz8oV8WG";
-//             console.log(queryURLNYT)
-//         $.ajax({
-//             url: queryURLNYT,
-//             method: "GET"
-//         })
-//             .then(function(response) {
-//                 console.log(response);
-                
-//                 // console.log(response.items.0.saleInfo.buyLink);
-//                 var randInt = Math.floor(Math.random() * 20)
-                
-//                 // console.log(response.results.books[randInt].author)
+                console.log(iconID)
 
-//                 var surprise = []
-//                 var surpriseWine = ['Malbec', 'Cabernet Sauvignon', 'Rose', 'Pinot Noir', 'Pinot Grigio', 'Shiraz', 'Chardonnay','Zinfandel', 'Sauvigon Blanc']
-//                 var wineIndex = Math.floor(Math.random()* 9)
-//                 console.log(surpriseWine[wineIndex]) // randomly chooses wine type for the surpise book 
+                //  setting the text
+
+                $(".current-weather").text("  " + " " + userLocation.toUpperCase() + " | " + Farenheit.toFixed(1) + " °F" + " |");
+
+                //  adding attributes: 
+                $(".icon").attr("src", " https://openweathermap.org/img/wn/" + iconID + ".png")
 
 
-//                 surprise.push(response.results.books[randInt].author)
-//                 surprise.push(response.results.books[randInt].title)
-//                 surprise.push(response.results.books[randInt].book_image)
-//                 surprise.push(response.results.books[randInt].description)
-//                 surprise.push(response.results.books[randInt].amazon_product_url)
-//                 console.log(surprise)
+
+                var temp = Farenheit
+                console.log(temp)
+                var authorChoice = "Stephen King"
 
 
-//             });
 
-// }   
+                var catalogArray = [{
+                        Author: "Stephen King",
+                        wineCold: " Rose",
+                        wineWarm: "Sauvignon Blanc",
+                        wineHot: "Pinot Noir",
+                    },
+                    {
+                        Author: "Fyodor Dostoevsky",
+                        wineCold: " Malbec",
+                        wineWarm: "Merlot",
+                        wineHot: "Pinot Noir",
+                    },
 
-// // var authorbtn = document.querySelector('author')
-// // authorbtn.addEventListener('click', function(){
-// //     console.log('im clicked')
-// // })
+                    {
+                        Author: "James Patterson",
+                        wineCold: " Cabarnet Suavignon",
+                        wineWarm: "Shiraz",
+                        wineHot: "Riesling",
+                    },
+                    {
+                        Author: "Agatha Christie",
+                        wineCold: " Zinf Andel",
+                        wineWarm: "Viognier",
+                        wineHot: "Merlot/Pinot Gris",
+                    },
+                    {
+                        Author: "Isabel Allende",
+                        wineCold: " Torrentes",
+                        wineWarm: "Syrah",
+                        wineHot: "Garnacha",
+                    },
+                    {
+                        Author: "Camille Perri'",
+                        wineCold: " Chenin Blanc",
+                        wineWarm: "Cabernet Sauvignon",
+                        wineHot: "Chardonnay/Rose",
+                    },
+                    {
+                        Author: "Sofi Oksanen",
+                        wineCold: " Chardonnay",
+                        wineWarm: "Chianti",
+                        wineHot: "Cabarnet Sauvignon",
+                    },
+                    {
+                        Author: "Herta Muller",
+                        wineCold: " Mulled Wine",
+                        wineWarm: "Suavignon Blanc",
+                        wineHot: "Malbec",
+                    },
+                    {
+                        Author: "Olga Tokarczuk",
+                        wineCold: " Chenin Blanc",
+                        wineWarm: "Reisling",
+                        wineHot: "Prosecco",
+                    },
+                    {
+                        Author: "Cormac McCarthy",
+                        wineCold: " Malbec",
+                        wineWarm: "Chianti",
+                        wineHot: "Sauvignon Blanc",
+                    },
+                    {
+                        Author: "Aldous Huxley",
+                        wineCold: " Mulled Wine",
+                        wineWarm: "Pinot Noir",
+                        wineHot: "Pinot Grigio",
+                    },
+                    {
+                        Author: "Penn Jillette",
+                        wineCold: " Decaf Caffè Americano w/ 8 shots of Decaf Espresso",
+                        wineWarm: "Decaffinated Coffee",
+                        wineHot: "Sparkling Water",
+                    },
+                ];
 
-// var searchTerm = ""
-// var authorName = "King"
-// var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorName + "&printType=books&maxResults=4" +  "&key=AIzaSyBTrX3sauMMmvjx2xDJpF8G58thA3OD4Qk";
-//                    // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
-//         console.log(queryURLGoogle)
-//       $.ajax({
-//         url: queryURLGoogle,
-//         method: "GET"
-//       })
-//         .then(function(response) {
-//             console.log(response)
-//             console.log(response.items[0].volumeInfo.title)
+                // console.log(catalogArray[0].Author)
+                // console.log(catalogArray[0].wineHot)
+                // console.log(catalogArray[0].wineWarm)
+                // console.log(catalogArray[0].wineCold)
 
-//            var coverPage = (response.items[0].volumeInfo.imageLinks.thumbnail)
-//            var author = (response.items[0].volumeInfo.authors[0])
-//            var description = (response.items[0].volumeInfo.description)
-//            var title = (response.items[0].volumeInfo.title)
-//            var buyLink = (response.items[0].saleInfo.buyLink)
 
-//         });
-// function googleBooks() {
-//     $(document).ready(function(){    
-//         $("#myform").submit(function(){
-            
-//             var search = $("#books").val();
-//             if(search == "")
-//             {
-//             alert("Might want to enter something here since you need something git pull to search for but I dunno... I just work here. ");
-//             }
-//             else{        
-//             var url = "";
-//             var img = "";
-//             var title = "";
-//             var author = "";
-//             var description = "";
-            
-//             $.get(queryURLGoogle,function(response){
-                    
-//                 for(i=0;i<response.items.length;i++){
-//                     title=$(response.items[i].volumeInfo.title);
-//                     description=$(response.items[0].volumeInfo.description)  
+                for (var i = 0; i < catalogArray.length; i++) {
+                    var wineName = ""
+                        // console.log(catalogArray[i].Author)
+                        // console.log(catalogArray[i].wineCold)
+                        // console.log(catalogArray[i].wineHot)
+                        // console.log(catalogArray[i].wineWarm)
+                    if (authorChoice === catalogArray[i].Author && temp <= 60) {
+                        wineName = catalogArray[i].wineCold
+                        console.log(wineName)
+                    }
+                    if (authorChoice === catalogArray[i].Author && temp > 60 && temp < 80) {
+                        wineName = catalogArray[i].wineWarm
+                        console.log(wineName)
+                    }
+                    if (authorChoice === catalogArray[i].Author && temp >= 80) {
+                        wineName = catalogArray[i].wineHot
+                        console.log(wineName)
+                    }
 
-//                     author=$(response.items[i].volumeInfo.authors);
-//                     img = $('<img id="dynamic"><br><a href=' + response.items[i].volumeInfo.thumbnail + '><button id="imagebutton">Read More</button></a>');     
-//                     url= response.items[i].saleInfo.buyLink;
-//                     img.attr('src', url);
-//                     title.appendTo('.title');
-//                     author.appendTo('.author');
-//                     description.appendTo('.description')
-//                     img.appendTo('#result');
-//                 }
-//             });
-                        
-//         }
-//                 return false;
-//         });
-                    
-//     });
-// }  
 
-// function normalSelection() {
-//     wineSelection()
-//     googleBooks()
-    
-// }
-// function luckySelection(){
-//     feelingLucky()
-// }
+                }
 
-// $('.author').click(function(){
-//    var authorClicked = $(this).val()
-//    var temp = 60
-    
-//     var wineName = ""
+            })
 
-//     var catalog = [
-//         ['Stephen King', 'Rose', 'Sauvignon Blanc', 'Pinot Noir'], 
-//         ['Fyodor Dostoevsky', 'Malbec', 'Merlot', 'Pinot Noir'], 
-//         ['James Patterson', 'Cabernet Sauvignon', 'Shiraz', 'Riesling'],
-//         ['Agatha Christie', 'Zinf Andel', 'Viognier', 'Merlot/Pinot Gris'],
-//         ['Isabel Allende', 'Torrentes', 'Syrah', 'Garnacha'],
-//         ['Camille Perri', 'Chenin Blanc', 'Cabernet Sauvignon', 'Chardonnay/Rose'],
-//         ['Sofi Oksanen', 'Chardonnay', 'Chianti', 'Cabarnet Sauvignon'],
-//         ['Herta Muller', 'Mulled Wine', 'Suavignon Blanc', 'Malbec'],
-//         ['Olga Tokarczuk', 'Chenin Blanc', 'Reisling', 'Prosecco'],
-//         ['Cormac McCarthy', 'Malbec', 'Chianti', 'Sauvignon Blanc'],
-//         ['Aldous Huxley', 'Mulled Wine', 'Pinot Noir', 'Pinot Grigio'],
-//         ['Penn Jillette', 'Decaf Caffè Americano w/ 8 shots of Decaf Espresso', 'Decaffinated Coffee', 'Sparkling Water']]
 
-            
 
-//     for (i = 0; i < exampleList.length; i++) {
-//         if ((authorClicked === catalog[i][0]) && (temp <= 60)) {
-//             wineName = catalog[i][1]
-//         }
-//         if ((authorClicked === catalog[i][0]) && (temp > 60 && temp < 80)){
-//             wineName = catalog[i][2]
-//         }
-//         if ((authorClicked === catalog[i][0]) && (temp >= 80)) {
-//             wineName = catalog[i][3]
-//         }
-//     }
-
-//     return wineName
-
- 
-
-// })
-
-// $('.author').on('click', function(){
-//     // console.log('clicked', $(this).text())
-//     console.log('test')
-// })
-$(document).on('click', '.author', function(event){
-    // event.preventDefault();
-
-    var authorClicked = $(this).text()
-    console.log(authorClicked)
-   
-    var index = document.getElementById('starterPage')
-    var suggestion = document.getElementById('suggestionPage')
-    
-    index.style.display = "none"
-    suggestion.style.display = "block"
-
-    
-    
-    
-    var searchTerm = ""
-    
-    var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorClicked + "&printType=books&maxResults=4" +  "&key=AIzaSyAY3w9MXUcw0hyZQHhfwGWZLP2O_iyJCgI";
-                   // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
-        console.log(queryURLGoogle)
-    $.ajax({
-        url: queryURLGoogle,
-        method: "GET"
     })
-        .then(function(response) {
-            console.log(response)
-            // console.log(response.items[0].volumeInfo.title)
 
-            
+
+
+
+    // // GETTING BOOK INFO BASED USER'S CHOICE OF AUTHOR AND ADDING IT TO HTML
+    $(document).on('click', '.author', function(event) {
+        // event.preventDefault();
+
+        var authorClicked = $(this).text()
+        console.log(authorClicked)
+
+        var index = document.getElementById('starterPage')
+        var suggestion = document.getElementById('suggestionPage')
+
+        index.style.display = "none"
+        suggestion.style.display = "block"
+
+
+
+
+        var searchTerm = ""
+
+        var queryURLGoogle = "https://www.googleapis.com/books/v1/volumes?q=" + searchTerm + "+inauthor:" + authorClicked + "&printType=books&maxResults=4" + "&key=AIzaSyAY3w9MXUcw0hyZQHhfwGWZLP2O_iyJCgI";
+        // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
+        console.log(queryURLGoogle)
+        $.ajax({
+                url: queryURLGoogle,
+                method: "GET"
+            })
+            .then(function(response) {
+                console.log(response)
+                    // console.log(response.items[0].volumeInfo.title)
+
+
 
                 var coverPage = (response.items[3].volumeInfo.imageLinks.thumbnail)
                 var author = (response.items[3].volumeInfo.authors[0])
                 var description = (response.items[3].volumeInfo.description)
                 var title = (response.items[3].volumeInfo.title)
                 var buyLink = (response.items[3].saleInfo.buyLink)
-                
-                
-                
+
+
+
 
                 var writerOne = document.querySelector('#writerOne')
                 var topicOne = document.querySelector('#titleOne')
@@ -237,7 +202,7 @@ $(document).on('click', '.author', function(event){
                 descripOne.append("Description: " + description)
                 $('#imgOne').attr('src', coverPage)
                 $('#linkOne').attr('href', buyLink)
-            
+
                 /////////////////////////////////////////////////////////////////////
 
                 var coverPage = (response.items[1].volumeInfo.imageLinks.thumbnail)
@@ -245,9 +210,9 @@ $(document).on('click', '.author', function(event){
                 var description = (response.items[1].volumeInfo.description)
                 var title = (response.items[1].volumeInfo.title)
                 var buyLink = (response.items[1].saleInfo.buyLink)
-                
-                
-                
+
+
+
 
                 var writerTwo = document.querySelector('#writerTwo')
                 var topicTwo = document.querySelector('#titleTwo')
@@ -259,7 +224,7 @@ $(document).on('click', '.author', function(event){
                 descripTwo.append("Description: " + description)
                 $('#imgTwo').attr('src', coverPage)
                 $('#linkTwo').attr('href', buyLink)
-            
+
                 /////////////////////////////////////////////////////////////////////
 
                 var coverPage = (response.items[2].volumeInfo.imageLinks.thumbnail)
@@ -267,9 +232,9 @@ $(document).on('click', '.author', function(event){
                 var description = (response.items[2].volumeInfo.description)
                 var title = (response.items[2].volumeInfo.title)
                 var buyLink = (response.items[2].saleInfo.buyLink)
-                
-                
-                
+
+
+
 
                 var writerThree = document.querySelector('#writerThree')
                 var topicThree = document.querySelector('#titleThree')
@@ -289,9 +254,9 @@ $(document).on('click', '.author', function(event){
                 var description = (response.items[0].volumeInfo.description)
                 var title = (response.items[0].volumeInfo.title)
                 var buyLink = (response.items[0].saleInfo.buyLink)
-                
-                
-                
+
+
+
 
                 var writerFour = document.querySelector('#writerFour')
                 var topicFour = document.querySelector('#titleFour')
@@ -303,34 +268,34 @@ $(document).on('click', '.author', function(event){
                 descripFour.append("Description: " + description)
                 $('#imgFour').attr('src', coverPage)
                 $('#linkFour').attr('href', buyLink)
-        })
+            })
 
-           
 
-           
 
-      
 
-        
-     
-        
-})
 
-$(".luckyList").on("click", function(){
 
-    var index = document.getElementById('starterPage')
-    var suggestion = document.getElementById('suggestionPage')
-    
-    index.style.display = "none"
-    // suggestion.style.display = "block"
 
-    var listName = "combined print fiction" // best seller books in this section
-    var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listName + ".json?api-key=E7hqgdVcY5GIbLAfpBFL6tvAVz8oV8WG";
-            console.log(queryURLNYT)
+
+
+
+    })
+
+    $(".luckyList").on("click", function() {
+
+        var index = document.getElementById('starterPage')
+        var suggestion = document.getElementById('suggestionPage')
+
+        index.style.display = "none"
+            // suggestion.style.display = "block"
+
+        var listName = "combined print fiction" // best seller books in this section
+        var queryURLNYT = "https://api.nytimes.com/svc/books/v3/lists/current/" + listName + ".json?api-key=E7hqgdVcY5GIbLAfpBFL6tvAVz8oV8WG";
+        console.log(queryURLNYT)
         $.ajax({
-            url: queryURLNYT,
-            method: "GET"
-        })
+                url: queryURLNYT,
+                method: "GET"
+            })
             .then(function(response) {
                 console.log(response);
                 // console.log(response.items.0.saleInfo.buyLink);
@@ -394,8 +359,11 @@ $(".luckyList").on("click", function(){
                     </div>
                 </div>
             </div>`
-        
-            $("#authorCards").html(authorCard);
-            });
-})
 
+                $("#authorCards").html(authorCard);
+            });
+    })
+
+}
+
+renderWinebyWeather();
