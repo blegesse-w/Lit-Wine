@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="uikit.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-
-
+    
+    
 </head>
-
 <body>
 
     <nav class="uk-navbar" uk-navbar>
@@ -19,17 +17,17 @@
             <div class="uk-navbar-left">
                 <p class="current-weather"></p>
                 <img class="icon">
-
-                <ul class="uk-navbar-nav">
-                    <li class="uk-active"><a id="home" type="reset">HOME</a></li>
-                    <li><a href="#" id="about">ABOUT</a></li>
-                </ul>
-
-            </div>
+    
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a  id="home" type="reset">HOME</a></li>
+                <li ><a href="#" id="about">ABOUT</a></li>
+            </ul>
+    
+        </div>
     </nav>
 
-    <div style="align-content: center;" id="starterPage">
-        <div class="uk-background-cover uk-background-muted uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(circle.jpg); height: 600px; width: 600px;">
+    <div style="align-content: center;" id="starterPage" class="uk-container">
+        <div class="uk-background-cover uk-background-muted uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(circle.jpg); height: 600px; width: 600px; margin: 5px 200px">
             <div class="text">
 
                 <h1 id="title" style="font-size:50px">LIT&WINE</h1>
@@ -47,11 +45,11 @@
                             <li><a class="author">Camille Perri</a></li>
                             <li><a class="author">Sofi Oksanen</a></li>
                             <li><a class="author">Herta Müller</a></li>
-                            <li><a class="author">Olga Tokarczuk</a></li>
+                            <li><a class="author">Lee Child</a></li>
                             <li><a class="author">Penn Jillette</a></li>
                             <li><a class="author">Cormac McCarthy</a></li>
                             <li><a class="author">Aldous Huxley</a></li>
-                            <li><a class="author">Agatha Christie</a></li>
+                            <li><a class="author">Gillian Flynn</a></li>
                             <li><a class="luckyList">I'm feeling lucky</a></li>
                             <li class="uk-nav-divider"></li>
                         </ul>
@@ -63,26 +61,26 @@
 
     <div id="suggestionPage">
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-            <div class="uk-inline">
-                <img src="assets/images/winestain.jpg" alt="" id="imgOne">
+            <div class="uk-card-media-left uk-cover-container ">
+                <img src="winestain.jpg" alt="Book Cover" uk-cover id="imgOne">
+                <canvas width="600" height="400"></canvas>
             </div>
             <div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title" class="title"></h3>
-
                     <p id="titleOne" style="font-size: 20px;"></p>
                     <p id="writerOne"></p>
                     <p id="descriptionOne"></p>
                     <p id="wineOne">Wine: </p>
                     <a class="uk-button uk-button-default" id="linkOne">Book Link</a>
                 </div>
-
             </div>
         </div>
-
+        
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-            <div class="uk-inline">
-                <img src="assets/images/winestain.jpg" alt="" id="imgTwo">
+            <div class="uk-card-media-left uk-cover-container ">
+                <img src="winestain.jpg" alt="Book Cover" uk-cover id="imgTwo">
+                <canvas width="600" height="400"></canvas>
             </div>
             <div>
                 <div class="uk-card-body">
@@ -96,9 +94,9 @@
             </div>
         </div>
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-            <div class="uk-inline">
-                <img src="assets/images/winestain.jpg" alt="" id="imgThree">
-
+            <div class="uk-card-media-left uk-cover-container">
+                <img src="winestain.jpg" alt="Book Cover" uk-cover id="imgThree">
+                <canvas width="600" height="400"></canvas>
             </div>
             <div>
                 <div class="uk-card-body">
@@ -112,8 +110,9 @@
             </div>
         </div>
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-            <div class="uk-inline">
-                <img src="assets/images/winestain.jpg" alt="" id="imgFour">
+            <div class="uk-card-media-left uk-cover-container">
+                <img src="winestain.jpg" alt="Book Cover" uk-cover id="imgFour">
+                <canvas width="600" height="400"></canvas>
             </div>
             <div>
                 <div class="uk-card-body">
@@ -128,11 +127,10 @@
         </div>
     </div>
     <div id="authorCards"></div>
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="uikit.min.js"></script>
     <script src="uikit-icons.min.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
