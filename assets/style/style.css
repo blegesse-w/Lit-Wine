@@ -8,6 +8,10 @@
         /*color: white;*/
     }
     
+    .uk-container {
+        margin: auto;
+    }
+    
     .writing {
         font-family: 'Special Elite', cursive;
     }
@@ -73,4 +77,9 @@
     
     #suggestionPage {
         display: none;
+    }
+    
+    .imgOne {
+        height: 300px;
+        width: 200px;
     }

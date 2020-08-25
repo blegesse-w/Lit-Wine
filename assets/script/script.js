@@ -2,7 +2,7 @@
 console.log("working")
 
 function renderWinebyWeather() {
-    $("#mainBtn").mouseover(function() {
+    $("#mainBtn").on("click", function() {
 
         var apiKey = "631af5c78fdde025e0d500219377445c";
 
@@ -72,8 +72,8 @@ function renderWinebyWeather() {
                         wineHot: "Garnacha",
                     },
                     {
-                        Author: "Camille Perri'",
-                        wineCold: " Chenin Blanc",
+                        Author: "Camille Perri",
+                        wineCold: "Chenin Blanc",
                         wineWarm: "Cabernet Sauvignon",
                         wineHot: "Chardonnay/Rose",
                     },
@@ -179,11 +179,12 @@ function renderWinebyWeather() {
                 })
                 .then(function(response) {
                     console.log(response)
-                        // console.log(response.items[0].volumeInfo.title)
+                    console.log(response)
 
 
 
                     var coverPage = (response.items[3].volumeInfo.imageLinks.thumbnail)
+                    console.log(coverPage)
                     var author = (response.items[3].volumeInfo.authors[0])
                     var description = (response.items[3].volumeInfo.description)
                     var title = (response.items[3].volumeInfo.title)
@@ -200,8 +201,12 @@ function renderWinebyWeather() {
                     writerOne.append("Author: " + author)
                     topicOne.append("Title: " + title)
                     descripOne.append("Description: " + description)
-                    $('#imgOne').attr('src', coverPage)
+                    $('.imgOne').attr('src', coverPage)
+
+
                     $('#linkOne').attr('href', buyLink)
+
+
 
                     /////////////////////////////////////////////////////////////////////
 
