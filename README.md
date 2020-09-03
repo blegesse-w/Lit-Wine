@@ -38,6 +38,7 @@ Several challenges occurred for us but we were able to conquer them all. We went
 ```
 
 ![screenshot](assets/images/Capture.png)
+![Lit Wine2](https://user-images.githubusercontent.com/66275100/92063238-595afd00-ed60-11ea-82de-b040f6ebb06e.JPG)
 
 - - -
 © 2020 Lit & Wine Services, Inc. All Rights Reserved.
